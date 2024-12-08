@@ -68,7 +68,9 @@ workerLog('thumb-gen: Th width: ' . $thmW);
 workerLog('thumb-gen: Thm qual: ' . $thmQ);
 
 // Ensure cache dir exists
-if (!file_exists(THMCACHE_DIR)) {
+//if (!file_exists(THMCACHE_DIR)) {
+if (!is_dir(THMCACHE_DIR)) {
+
 	workerLog('thumb-gen: Info: Missing thmcache dir, new one created');
 	sysCmd('mkdir ' . THMCACHE_DIR);
 }
